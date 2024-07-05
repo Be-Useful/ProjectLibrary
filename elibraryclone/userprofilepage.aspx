@@ -1,9 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="userprofilepage.aspx.cs" Inherits="elibraryclone.usersignup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <div class="container-fluid">
+   <div class="container-fluid">
       <div class="row">
          <div class="col-md-5">
             <div class="card">
@@ -134,7 +138,7 @@
                      <div class="col-md-4">
                         <label>Old Password</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Email ID" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Old Password"  ReadOnly="True"></asp:TextBox>
                         </div>
                      </div>
                      <div class="col-md-4">
@@ -148,7 +152,7 @@
                      <div class="col-8 mx-auto">
                         <center>
                            <div class="form-group">
-                              <asp:Button class="btn btn-primary btn-block btn-lg" ID="Button1" runat="server" Text="Update" />
+                              <asp:Button class="btn btn-primary btn-block btn-lg" ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
                            </div>
                         </center>
                      </div>
@@ -182,7 +186,9 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                           <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -190,5 +196,4 @@
          </div>
       </div>
    </div>
-
 </asp:Content>

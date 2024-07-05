@@ -107,7 +107,7 @@ namespace elibraryclone
 
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
-            Response.Redirect("userprofile.aspx");
+            Response.Redirect("userprofilepage.aspx");
         }
 
         protected void LinkButton6_Click(object sender, EventArgs e)

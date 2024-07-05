@@ -13,7 +13,6 @@ namespace elibraryclone
     public partial class usersignup1 : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        private string full_name;
 
         public object TextBox10 { get; private set; }
 
